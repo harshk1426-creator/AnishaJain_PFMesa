@@ -227,6 +227,12 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 20px rgba(109,40,217,.28);
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(109,40,217,.42); }
+.btn-secondary {
+  background: transparent;
+  color: var(--purple);
+  border: 1.5px solid var(--purple);
+}
+.btn-secondary:hover { background: rgba(109,40,217,.06); transform: translateY(-2px); }
 .btn-ghost {
   border: 1.5px solid var(--border-h);
   color: var(--text);
@@ -425,7 +431,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.75;
   max-width: 600px;
 }
-.ekdor-teaser-right { flex-shrink: 0; }
+.ekdor-teaser-right { flex-shrink: 0; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
 
 /* Projects grid */
 .proj-grid {
