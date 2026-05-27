@@ -875,10 +875,11 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 .pull-quote {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
   padding: 0 24px;
+  white-space: nowrap;
 }
 .pull-quote-mark {
   display: block;
@@ -890,13 +891,14 @@ img { max-width: 100%; display: block; }
   user-select: none;
 }
 .pull-quote p {
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
   font-style: normal;
   font-weight: 300;
   font-family: 'Inter', sans-serif;
   color: var(--text);
   line-height: 1.65;
   letter-spacing: .01em;
+  white-space: nowrap;
 }
 .pull-quote p em {
   font-style: italic;
