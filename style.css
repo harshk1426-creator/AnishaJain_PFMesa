@@ -679,6 +679,13 @@ img { max-width: 100%; display: block; }
   line-height: 1;
   margin-bottom: 14px;
 }
+.ekdor-hero-logo {
+  height: clamp(52px, 8vw, 88px);
+  width: auto;
+  display: block;
+  margin-bottom: 14px;
+  filter: brightness(0) invert(1);
+}
 .ekdor-hero-tag {
   font-size: 18px;
   font-style: italic;
