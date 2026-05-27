@@ -891,10 +891,16 @@ img { max-width: 100%; display: block; }
 }
 .pull-quote p {
   font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
   color: var(--text);
   line-height: 1.65;
+  letter-spacing: .01em;
+}
+.pull-quote p em {
+  font-style: italic;
+  font-weight: 400;
 }
 .pull-quote-attr {
   display: block;
