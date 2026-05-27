@@ -32,26 +32,6 @@ function highlightNav() {
   });
 }
 
-/* ── EKDOR image gallery ─────────────────────────── */
-function switchImg(thumb, src) {
-  const main = document.getElementById('galleryMain');
-  main.src = src;
-  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-  thumb.classList.add('active');
-}
-
-// Auto-cycle gallery every 3s
-(function autoCycle() {
-  const thumbs = document.querySelectorAll('.thumb');
-  if (!thumbs.length) return;
-  let idx = 0;
-  setInterval(() => {
-    idx = (idx + 1) % thumbs.length;
-    const t = thumbs[idx];
-    switchImg(t, t.src);
-  }, 3000);
-})();
-
 /* ── Scroll-reveal via IntersectionObserver ──────── */
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
@@ -73,22 +53,22 @@ const PORTRAIT_PH = `data:image/svg+xml,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="450" viewBox="0 0 360 450">
   <defs>
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="100%" stop-color="#EC4899"/>
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#B91C6A"/>
     </linearGradient>
   </defs>
-  <rect width="360" height="450" fill="#0E0E1A"/>
-  <circle cx="180" cy="180" r="90" fill="url(#g)" opacity=".25"/>
+  <rect width="360" height="450" fill="#F7F6F2"/>
+  <circle cx="180" cy="180" r="90" fill="url(#g)" opacity=".12"/>
   <text x="180" y="202" text-anchor="middle" fill="url(#g)"
     font-family="Inter,sans-serif" font-size="72" font-weight="900">AJ</text>
-  <text x="180" y="260" text-anchor="middle" fill="#64748B"
+  <text x="180" y="260" text-anchor="middle" fill="#AAAAAA"
     font-family="Inter,sans-serif" font-size="13">Photo coming soon</text>
 </svg>`)}`;
 
 const IMG_PH = `data:image/svg+xml,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260">
-  <rect width="400" height="260" fill="#0E0E1A"/>
-  <text x="200" y="136" text-anchor="middle" fill="#1E293B"
+  <rect width="400" height="260" fill="#F7F6F2"/>
+  <text x="200" y="136" text-anchor="middle" fill="#CCCCCC"
     font-family="Inter,sans-serif" font-size="13">Image coming soon</text>
 </svg>`)}`;
 
