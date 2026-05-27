@@ -263,12 +263,7 @@ img { max-width: 100%; display: block; }
   height: 450px;
 }
 .portrait-ring {
-  position: absolute;
-  inset: -5px;
-  border-radius: 42% 58% 60% 40% / 52% 48% 62% 38%;
-  background: var(--grad);
-  animation: morph 7s ease-in-out infinite;
-  z-index: 0;
+  display: none;
 }
 .portrait {
   position: relative;
@@ -276,14 +271,8 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 42% 58% 60% 40% / 52% 48% 62% 38%;
-  animation: morph 7s ease-in-out infinite;
-}
-@keyframes morph {
-  0%,100% { border-radius: 42% 58% 60% 40% / 52% 48% 62% 38%; }
-  25%      { border-radius: 62% 38% 42% 58% / 42% 62% 52% 58%; }
-  50%      { border-radius: 52% 48% 38% 62% / 60% 42% 60% 48%; }
-  75%      { border-radius: 40% 60% 56% 44% / 52% 60% 40% 56%; }
+  border-radius: 16px;
+  animation: none;
 }
 
 .fade-up {
