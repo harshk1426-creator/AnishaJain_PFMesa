@@ -48,6 +48,16 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 reveals.forEach(el => io.observe(el));
 
+/* ── IG bar chart animation ──────────────────────── */
+const igCard = document.querySelector('.ig-card');
+if (igCard) {
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.ig-bar').forEach(b => b.classList.add('bar-visible'));
+    }
+  }, { threshold: 0.35 }).observe(igCard);
+}
+
 /* ── Placeholder for missing images ─────────────── */
 const PORTRAIT_PH = `data:image/svg+xml,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="450" viewBox="0 0 360 450">

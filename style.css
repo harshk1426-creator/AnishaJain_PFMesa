@@ -993,6 +993,119 @@ img { max-width: 100%; display: block; }
   padding-top: 2px;
 }
 
+/* ── Instagram Reels custom viz ────────────────────── */
+.ig-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-h);
+}
+.ig-card-header { margin-bottom: 6px; }
+.ig-card-title { font-size: 13px; font-weight: 700; color: var(--text); }
+.ig-card-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
+.ig-total-num {
+  font-size: 2.4rem;
+  font-weight: 900;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin: 14px 0 2px;
+}
+.ig-total-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 600;
+  color: var(--text3);
+  margin-bottom: 24px;
+}
+.ig-bars-wrap {
+  display: flex;
+  gap: 10px;
+  height: 180px;
+  margin-bottom: 4px;
+}
+.ig-reel-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ig-views-label {
+  font-size: 14px;
+  font-weight: 900;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+.ig-bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.ig-bar {
+  width: 100%;
+  border-radius: 6px 6px 3px 3px;
+  background: var(--grad);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ig-bar.bar-visible { transform: scaleY(1); }
+.ig-bar--1 { height: 100%; }
+.ig-bar--2 { height: 55%; opacity: .82; transition-delay: .15s; }
+.ig-bar--3 { height: 28%; opacity: .65; transition-delay: .3s; }
+.ig-reel-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0 4px;
+  width: 100%;
+  align-items: center;
+}
+.ig-metric-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text3);
+}
+.ig-metric-row .ig-val { font-weight: 700; color: var(--text2); }
+.ig-reel-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-top: 4px;
+}
+.ig-card-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--text3);
+}
+.ig-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(34,197,94,.6);
+}
+
 /* =====================================================
    RESPONSIVE
 ===================================================== */
