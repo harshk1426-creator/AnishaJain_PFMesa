@@ -64,8 +64,8 @@ img { max-width: 100%; display: block; }
   line-height: 1.15;
   margin-bottom: 48px;
 }
-.ekdor-page .sec-label { font-size: 14px; }
-.ekdor-page .ekdor-body h2 { font-size: clamp(1.9rem, 3.4vw, 2.5rem); }
+.ekdor-page .sec-label { font-size: 15px; letter-spacing: .14em; }
+.ekdor-page .ekdor-body h2 { font-size: clamp(2.2rem, 4vw, 3rem); }
 
 /* =====================================================
    REVEAL ANIMATION
