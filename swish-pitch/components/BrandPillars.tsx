@@ -1,83 +1,89 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Zap, Flame, ShieldCheck } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Zap, Flame, Shield } from "lucide-react";
 
 const pillars = [
   {
-    num: "01",
-    icon: Zap,
+    number: "01",
+    Icon: Zap,
     title: "Speed",
-    tagline: "10 min, no compromise.",
-    desc: "The promise that starts the relationship. Fast enough to believe. Real enough to trust.",
+    desc: "10 min, no compromise. The promise that starts the relationship.",
   },
   {
-    num: "02",
-    icon: Flame,
+    number: "02",
+    Icon: Flame,
     title: "Taste",
-    tagline: "Hot. Fresh. Real food.",
-    desc: "The promise that keeps the relationship going. Not meal-kit quality. Actual delicious food.",
+    desc: "Hot. Fresh. Real food. The promise that keeps it going.",
   },
   {
-    num: "03",
-    icon: ShieldCheck,
+    number: "03",
+    Icon: Shield,
     title: "Confidence",
-    tagline: "Order without second-guessing.",
-    desc: "That's the Swish feeling. You already know it'll be good. That's the brand doing its job.",
+    desc: "Order without second-guessing. That's the Swish feeling.",
   },
 ];
 
 export default function BrandPillars() {
-  return (
-    <section className="bg-[#1A1A1A] py-32 md:py-48 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-[#F5A623] text-sm font-semibold tracking-[0.3em] uppercase mb-12"
-        >
-          Brand Pillars
-        </motion.p>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
+  return (
+    <section className="py-32 px-6" style={{ backgroundColor: "#FFFFFF" }} ref={ref}>
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight mb-20"
+          className="text-5xl md:text-6xl font-bold mb-16"
+          style={{ fontFamily: "var(--font-fraunces)", color: "#1A1A1A" }}
         >
-          Three things
-          <br />
-          <span className="text-[#F5A623] italic">Swish never compromises.</span>
+          Brand Pillars
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {pillars.map((p, i) => (
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map((pillar, i) => (
             <motion.div
-              key={p.num}
+              key={pillar.title}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 group hover:border-[#C8321A]/50 transition-colors duration-300"
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="border border-black/10 rounded-2xl p-8 relative overflow-hidden cursor-default group"
             >
-              <div className="flex items-start justify-between mb-8">
-                <span className="font-display text-5xl font-bold text-white/10">
-                  {p.num}
-                </span>
-                <div className="w-12 h-12 rounded-full bg-[#C8321A]/20 flex items-center justify-center group-hover:bg-[#C8321A]/40 transition-colors duration-300">
-                  <p.icon size={22} className="text-[#F5A623]" />
-                </div>
-              </div>
-              <h3 className="font-display text-3xl font-bold text-white mb-2">
-                {p.title}
+              {/* Large number background */}
+              <span
+                className="absolute -top-4 -right-2 text-9xl font-bold opacity-5 select-none"
+                style={{ fontFamily: "var(--font-fraunces)", color: "#1A1A1A" }}
+              >
+                {pillar.number}
+              </span>
+
+              {/* Icon */}
+              <pillar.Icon
+                size={28}
+                className="mb-6"
+                style={{ color: "#C8321A" }}
+              />
+
+              {/* Title */}
+              <h3
+                className="text-3xl font-bold italic mb-4"
+                style={{ fontFamily: "var(--font-fraunces)", color: "#1A1A1A" }}
+              >
+                {pillar.title}
               </h3>
-              <p className="text-[#F5A623] font-semibold text-sm mb-4">
-                {p.tagline}
+
+              {/* Desc */}
+              <p
+                className="text-base leading-relaxed text-black/60"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >
+                {pillar.desc}
               </p>
-              <p className="text-white/50 text-sm leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
